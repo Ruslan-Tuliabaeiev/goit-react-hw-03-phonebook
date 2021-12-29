@@ -1,0 +1,52 @@
+
+
+
+
+.block {
+    border-radius: 3px;
+    border-color: black;
+}
+
+
+.blockList {
+padding-top: 20px;
+    display: flex;
+margin-left: 20px;
+}
+
+.span {
+   padding-right: 20px;
+}
+
+.formStyle {
+   width: 370px;
+   height: 150px;
+   border: 2px solid black;
+
+ margin-left: 10px;
+}
+.buttonSudmit {
+   
+    margin-top: 20px;
+    display: flex;
+    margin-left: 20px;
+}
+
+.list {
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+.contact {
+    margin-left: 30px;
+}
+
+.contactFind {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.listNumber {
+    margin-left: 10px;
+    margin-right: 20px;
+}
