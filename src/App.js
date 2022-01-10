@@ -8,16 +8,53 @@ import { Contacts } from './components/Contacts';
 import { Form } from './components/Form';
 import { Filter } from './components/Filter';
 import style from './components/phonebook.module.css';
-import initialContacts from './localStorage.json'
+//import setContacts from  './setContacts.json';
 
 class App extends Component {
   state = {
-    contacts:  initialContacts ,
+    contacts: [],
   
     filter: '',
   
     };
+//////////
 
+componentDidMount() {
+// const setContact = this.setState('setContacts')
+const contacts = localStorage.getItem('contacts');
+console.log(contacts);
+const parsedContacts = JSON.parse(contacts);
+ console.log(JSON.parse(contacts));
+
+if (parsedContacts) {
+  
+this.setState({contacts: parsedContacts})
+console.log(this.setState({contacts: parsedContacts, }))
+}
+
+
+}
+
+componentDidUpdate(prevProps, prevState) {
+
+  // console.log('App componentDidUpdate');
+
+  const nextContacts = this.state.contacts;
+  const prevContacts = prevState.contacts;
+ 
+
+  if (nextContacts !== prevContacts) {
+    console.log('Обновилось');
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+
+  //  if (nextContacts.length > prevContacts.length && prevContacts.length !== 0) {
+  //    this.toggleModal();
+  // }
+  console.log(prevContacts, nextContacts);
+}
+
+/////////
 
     handleFilter = e => {
 
